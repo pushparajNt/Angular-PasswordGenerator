@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PasswordGenerator';
+  
+  title = '';
+  generate()
+  {
+    console.log("generate clicked");
+    this.title="Pushparaj";
+  }
+  
 }
