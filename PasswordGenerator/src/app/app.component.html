@@ -1,17 +1,17 @@
 <h1>Password Generator</h1>
 <label for="">Enter length</label>
-<input type="text">
+<input type="text" (input)="onChangePassLength($any($event.target).value)">
 <div>
 <label for="">Use Letters</label>
-<input type="checkbox">
+<input type="checkbox" (change)="useLetters()">
 </div>
 <div>
 <label for="">Use Numbers</label>
-<input type="checkbox">
+<input type="checkbox" (change)="useNumbers()">
 </div>
 <div>
 <label for="">Use symbols</label>
-<input type="checkbox">
+<input type="checkbox" (change)="useSymbols()">
 </div>
 <div>
 <button (click)="generate()">Generate!</button>
