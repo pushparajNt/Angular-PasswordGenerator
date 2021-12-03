@@ -16,7 +16,7 @@
 <div>
 <button  [disabled]="!(passLength && (checkUseLetters || checkUseNumbers || checkUseSymbols))"  (click)="generate()">Generate!</button>
 </div>
-<div>
+<div *ngIf="password">
 <label for="">Your Password</label>
 <input type="text" [value]="password">
 </div>
