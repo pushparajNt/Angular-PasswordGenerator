@@ -6,19 +6,41 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
-  title = '';
+  password='';
   checkUseLetters=false;
   checkUseNumbers=false;
   checkUseSymbols=false;
   passLength=0;
   generate()
   {
-    this.title="Pushparaj";
+    let validChars='';
+    let chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let numbers='0123456789';
+    let specialChars="!#$%&'()*+,-./:;<=>?@[\]^_{|}~";
     console.log(`Generate password with the following:
                  includes letters:${this.checkUseLetters}
                  Includes Numbers:${this.checkUseNumbers}
                  Includes Symbols:${this.checkUseSymbols}`);
+   if(this.checkUseLetters)
+   {
+     validChars+=chars;
+   }
+   if(this.checkUseNumbers)
+   {
+     validChars+=numbers;
+   }
+   if(this.checkUseSymbols)
+   {
+     validChars+=specialChars;
+   }
+
+   let generatePassword='';
+   for(let i=0;i<this.passLength;i++)
+   {
+     generatePassword += validChars. charAt(Math. floor(Math. random() * validChars. length));
+   }
+
+     this.password=generatePassword;          
   }
 
   onChangePassLength(value:string)

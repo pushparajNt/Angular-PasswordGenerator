@@ -14,9 +14,9 @@
 <input type="checkbox" (change)="useSymbols()">
 </div>
 <div>
-<button (click)="generate()">Generate!</button>
+<button  [disabled]="!(passLength && (checkUseLetters || checkUseNumbers || checkUseSymbols))"  (click)="generate()">Generate!</button>
 </div>
 <div>
 <label for="">Your Password</label>
-<input type="text" [value]="title">
+<input type="text" [value]="password">
 </div>
