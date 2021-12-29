@@ -1,0 +1,19 @@
+<app-table [data]="data" [headers]="headers"></app-table>
+
+<div class="row container">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2">
+        <div>
+            <a routerLink="./" routerLinkActive="active">Biography</a>
+        </div>
+        <div>
+            <a routerLink="companies" routerLinkActive="active">companies</a>
+        </div>
+        <div>
+            <a routerLink="partners" routerLinkActive="active">partners</a>
+        </div>
+    </div>
+    <div class="col-lg-7">
+    <router-outlet></router-outlet>
+    </div>
+</div>
