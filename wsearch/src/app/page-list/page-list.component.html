@@ -1,1 +1,26 @@
-<p>page-list works!</p>
+<table class="table">
+    <thead class="thead-dark">
+      <tr *ngIf="pages.length">
+        <th scope="col">Page Id</th>
+        <th scope="col">size</th>
+        <th scope="col">snippet</th>
+        <th scope="col">title</th>
+        <th scope="col">wordcount</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let page of pages">
+        <td>{{page.pageid}}</td>
+        <td>{{page.size}}</td>
+        <td [innerHTML]="page.snippet"></td>
+        <td>
+          <a target="_blank" [href]="'https://en.wikipedia.org?curid='+page.pageid">
+          {{page.title}}
+        </a>
+        </td>
+        <td>{{page.wordcount}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
