@@ -1,1 +1,15 @@
-<p>sign-up works!</p>
+<h3>Sign up Form</h3>
+
+<div class="container">
+<form [formGroup]="authForm">
+    <app-input label="Username" [control]="$any(authForm).get('username')"></app-input>
+    <app-input label="Password" [control]="$any(authForm).get('password')"></app-input>
+    <app-input label="Password" [control]="$any(authForm).get('passwordConfirmation')"></app-input>
+    
+    {{authForm.get('username')?.errors | json}}
+    {{authForm.get('password')?.errors| json}}
+    {{authForm.get('passwordConfirmation')?.errors| json}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {{authForm.errors | json}}
+  </form>
+</div>

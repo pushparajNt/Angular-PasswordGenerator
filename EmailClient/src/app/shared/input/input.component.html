@@ -1,1 +1,23 @@
-<p>input works!</p>
+<div>
+    <label >{{label}}</label>
+    <input [formControl]="control">
+    <div  *ngIf="showErrors()" class="text-danger" >
+        <p *ngIf="control.errors?.['required']">
+            value is required
+        </p>
+        <p *ngIf="control.errors?.['minlength']">
+            value you entered is {{control.errors?.['minlength'].actualLength}}
+            character long,but it must be atleast {{control.errors?.['minlength'].requiredLength}} characters
+        </p>
+        <p *ngIf="control.errors?.['maxlength']">
+            value you entered is {{control.errors?.['maxlength'].actualLength}}
+            character long,but it should not be more than {{control.errors?.['maxlength'].requiredLength}} characters
+        </p>
+      <p *ngIf="control.errors?.['pattern']">
+        Invalid format
+      </p>  
+      <p *ngIf="control.errors?.['nonUniqueUsename']">
+        Username taken
+      </p>
+    </div>
+</div>
